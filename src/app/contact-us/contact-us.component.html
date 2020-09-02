@@ -1,0 +1,48 @@
+<section class="">
+  <div class="container">
+    <div class="form-container">
+
+
+      <form class="form" #contactFrom='ngForm' (ngSubmit)="submitContactUs(contactFrom)">
+
+
+        <h6 class="totalError" *ngIf='totalError' @errorMsg>{{totalError}}</h6>
+        <h6 class="success" *ngIf='success' @errorMsg>{{success}}</h6>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class=" p-float-label input-label-container">
+              <input id="usernameInput" name="uname" type="text" ngModel #uname="ngModel" required minlength=3
+                pInputText>
+              <label for="usernameInput" [ngClass]="{labelAtTop: uname.value }">User Name</label>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class=" p-float-label input-label-container">
+              <input id="userEmail" name="uEmail" type="email" ngModel #uEmail="ngModel" required email pInputText>
+              <label for="userEmail" [ngClass]="{labelAtTop: uEmail.value }">User Email</label>
+            </div>
+
+          </div>
+
+          <div class="col-md-12">
+            <div class=" p-float-label input-label-container">
+              <textarea id="userMsg" name="userMsg" ngModel #userMsg="ngModel" required pInputText></textarea>
+              <label for="userMsg" [ngClass]="{labelAtTop: userMsg.value }">Message</label>
+            </div>
+          </div>
+
+        </div>
+
+
+        <button type="submit" class="btn submit-btn" [disabled]=contactFrom.invalid>
+          submit
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</section>

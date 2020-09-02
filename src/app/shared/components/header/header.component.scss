@@ -1,0 +1,42 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./../../../../scss/variables";
+@import "./../../../../scss/mixins";
+
+.navbar-container {
+  background: rgba(0, 0, 0, 0.9);
+  .container {
+    .navbar-brand {
+      .logo {
+        height: 80px;
+      }
+    }
+    .navbar-toggler {
+      @include nonBorder();
+    }
+    .navbar-collapse {
+      @include media-breakpoint-down(md) {
+        transition-duration: 2s;
+      }
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: white !important;
+            font-size: 1.2em;
+            &:hover,
+            &.active {
+              background: $main;
+              @include border-rad(5px);
+              transition-property: background color transform;
+              transition-duration: 2s;
+
+              @include media-breakpoint-down(md) {
+                background: transparent;
+                color: $main !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

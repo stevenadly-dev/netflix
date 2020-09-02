@@ -1,0 +1,23 @@
+  <!-- @fadeIn -->
+  <a class="movie-item" [routerLink]="[movie.media_type , movie.id]" @fadeIn>
+
+    <img [src]="imgPrefix+movie.poster_path" alt="">
+    <div class="overlay">
+      <h3 class="movie-title">
+        {{movie.name || movie.title}}
+      </h3>
+
+      <h5 class="type">
+        {{movie.media_type}}
+      </h5>
+
+      <h5 class="rating">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        {{movie.vote_average}}
+      </h5>
+
+      <h6 class="description">
+        {{movie.overview}}
+      </h6>
+    </div>
+  </a>

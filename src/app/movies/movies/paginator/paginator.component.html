@@ -1,0 +1,14 @@
+<div class="row pagination-row">
+  <a (click)="emitPageNumber((pageNum-1))" *ngIf="(pageNum-1)>0 && (pageNum-1)<totalNumberOfPages">prev</a>
+
+  <a (click)="emitPageNumber(pageNum-3)" *ngIf="(pageNum-3)>0 && (pageNum-3)<totalNumberOfPages">{{pageNum-3}}</a>
+  <a (click)="emitPageNumber(pageNum-2)" *ngIf="(pageNum-2)>0 && (pageNum-2)<totalNumberOfPages">{{pageNum-2}}</a>
+  <a (click)="emitPageNumber(pageNum-1)" *ngIf="(pageNum-1)>0 && (pageNum-1)<totalNumberOfPages">{{pageNum-1}}</a>
+  <a (click)="emitPageNumber(pageNum)" class="active">{{pageNum}}</a>
+  <a (click)="emitPageNumber(pageNum+1)" *ngIf="(pageNum+1)>0 && (pageNum+1)<totalNumberOfPages">{{pageNum+1}}</a>
+  <a (click)="emitPageNumber(pageNum+2)" *ngIf="(pageNum+2)>0 && (pageNum+1)<totalNumberOfPages">{{pageNum+2}}</a>
+  <a (click)="emitPageNumber(pageNum+3)" *ngIf="(pageNum+3)>0 && (pageNum+3)<totalNumberOfPages">{{pageNum+3}}</a>
+
+
+  <a (click)="emitPageNumber(pageNum+1)" *ngIf="(pageNum+1)>0 && (pageNum+1)<totalNumberOfPages">next</a>
+</div>

@@ -1,0 +1,47 @@
+<footer class="footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="footer-ul">
+          <li class="footer-link"><a routerLink='' routerLinkActive='active'
+              [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li class="footer-link"><a routerLink='shows' routerLinkActive='active'>Movies</a></li>
+          <li class="footer-link" *ngIf="!isLoginned"><a routerLink='auth/login' routerLinkActive='active'>login</a>
+          </li>
+          <li class="footer-link" *ngIf="!isLoginned"><a routerLink='auth/register'
+              routerLinkActive='active'>register</a></li>
+          <li class="footer-link" *ngIf="isLoginned"><a (click)="logOut()">logout</a></li>
+          <li class="footer-link"><a routerLink='contactUs' routerLinkActive='active'>Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <ul class="footer-ul">
+          <li class="footer-link"><a href="#">privacy and condition</a></li>
+          <li class="footer-link"><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 offset-md-3">
+        <div class="social-media-container">
+          <li class="sm-item">
+            <a href="#">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="sm-item">
+            <a href="#">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="sm-item">
+            <a href="#">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

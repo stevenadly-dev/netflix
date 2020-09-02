@@ -1,0 +1,54 @@
+<section class="">
+
+
+  <div class="main-home-section-container">
+    <div class="main-home-section"></div>
+    <div class="overlay"></div>
+
+
+    <div class="form-container">
+      <div class="inner">
+        <h1 class="title">Sign In </h1>
+        <form class="login-form" #loginform="ngForm" (ngSubmit)="onSubmitLogin(loginform)">
+
+
+          <h6 class="finalErrors" *ngIf='finalErrors' @errorMsg>{{finalErrors}}</h6>
+
+          <div class=" p-float-label input-label-container">
+            <input id="usernameInput" name="email" type="email" ngModel #UemailInput="ngModel" required email
+              pInputText>
+            <label for="usernameInput" [ngClass]="{labelAtTop: UemailInput.value }">E-mail</label>
+          </div>
+
+          <ul *ngIf="UemailInput.invalid && UemailInput.touched" class="error-label">
+            <li *ngIf="UemailInput.errors.required">required</li>
+            <li *ngIf="UemailInput.errors.email">please enter a valid mail</li>
+          </ul>
+
+
+
+          <div class="p-float-label input-label-container">
+            <input id="userPasswordInput" name="password" type="password" ngModel required minlength="8"
+              #userPasswordInput="ngModel" pInputText>
+            <label for="userPasswordInput" [ngClass]="{labelAtTop: userPasswordInput.value }">Password</label>
+          </div>
+          <ul *ngIf="userPasswordInput.invalid && userPasswordInput.touched" class="error-label">
+            <li *ngIf="userPasswordInput.errors.required">required</li>
+            <li *ngIf="userPasswordInput.errors.minlength">password should be at least 8 characters</li>
+          </ul>
+
+
+          <button type="submit" class="btn submit-btn">
+            Login
+          </button>
+
+
+          <div class="login-signup-now" data-uia="login-signup-now">New to Netflix?
+            <a routerLink="/auth/register">Sign up now</a>.</div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</section>

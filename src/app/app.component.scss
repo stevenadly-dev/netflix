@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./../scss/variables";
+@import "./../scss/mixins";
+// p {
+//   color: $main;
+// }
+// h1 {
+//   color: red;
+//   @include media-breakpoint-down(lg) {
+//     color: black;
+//   }
+//   @include nonBorder();
+//   @include fx-center(row);
+// }
+
+.mainHeader {
+  // background: green;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}

@@ -1,0 +1,23 @@
+<section class="movies-home">
+
+  <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+
+  <div class="container">
+
+
+
+
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let movie of trendingMovies">
+        <app-single-movie-card [myMovie]=movie [test]="'tessssss'">
+        </app-single-movie-card>
+      </div>
+
+
+    </div>
+
+    <app-paginator [totalNumberOfPages]=totalPagesNumber (pageNumEmitter)="getMovies($event)"></app-paginator>
+
+  </div>
+</section>

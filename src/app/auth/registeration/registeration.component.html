@@ -1,0 +1,96 @@
+<section class="">
+  <div class="main-home-section-container">
+    <div class="main-home-section"></div>
+    <div class="overlay"></div>
+
+    <div class="form-container">
+      <div class="inner">
+        <h1 class="title">Sign Up </h1>
+        <form class="login-form" [formGroup]="registerationForm" (ngSubmit)="onSubmitReactiveForm()">
+
+
+          <h6 class="finalErrors" *ngIf='finalErrors' @errorMsg>{{finalErrors}}</h6>
+
+
+          <div class="p-float-label input-label-container">
+            <input id="Uemail" type="email" pInputText formControlName="email" required #Uemail>
+            <label for="Uemail" [ngClass]="{labelAtTop: Uemail.value}">E-mail</label>
+          </div>
+          <ul *ngIf="registerationForm.controls.email.errors && registerationForm.controls.email.touched"
+            class="error-label">
+            <li *ngIf="registerationForm.controls.email.errors.required">required</li>
+            <li *ngIf="registerationForm.controls.email.errors.email">please enter a valid mail</li>
+          </ul>
+
+
+
+
+          <div class="p-float-label input-label-container">
+            <input id="Upassword" type="password" pInputText formControlName="password" required minlength="8"
+              #password>
+            <label for="Upassword" [ngClass]="{labelAtTop: password.value}">Password</label>
+          </div>
+          <ul *ngIf="registerationForm.controls.password.errors && registerationForm.controls.password.touched"
+            class="error-label">
+            <li *ngIf="registerationForm.controls.password.errors.required">required</li>
+            <li *ngIf="registerationForm.controls.password.errors.minlength">password should be at least 8 characters
+            </li>
+          </ul>
+          <button type="submit" class="btn submit-btn" [disabled]='this.registerationForm.invalid'>
+            Sign Up
+          </button>
+
+
+
+
+          <div class="login-signup-now">I have account
+            <a routerLink="/auth/login">Sign In now</a>.</div>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- =====================================================ng template driven form  -->
+
+
+    <!-- <div class="form-container">
+      <div class="inner">
+        <h1 class="title">Sign Up </h1>
+        <form class="login-form" #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+          <div class=" p-float-label input-label-container">
+            <input id="Uemail" type="email" name="email" pInputText ngModel required #UemailInput="ngModel">
+            <label for="Uemail">E-mail</label>
+          </div>
+          <span *ngIf="UemailInput.invalid&&UemailInput.touched" class="error-label">error !</span>
+
+
+          <div class="p-float-label input-label-container">
+            <input id="Upassword" type="password" name="password" pInputText ngModel required #UpasswordInput="ngModel">
+            <label for="Upassword">Password</label>
+          </div>
+          <span *ngIf="UpasswordInput.invalid&&UpasswordInput.touched" class="error-label">error !</span>
+
+
+          <button type="submit" class="btn submit-btn" [disabled]="loginform.invalid">
+            Sign Up
+          </button>
+
+
+
+
+          <div class="login-signup-now">I have account
+            <a class="" href="/">Sign In now</a>.</div>
+        </form>
+
+        <code>{{loginform.value |json}}</code>
+
+
+      </div>
+    </div> -->
+
+
+
+
+
+  </div>
+</section>

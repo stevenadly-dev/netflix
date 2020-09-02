@@ -1,0 +1,116 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./../../../scss/variables";
+@import "./../../../scss/mixins";
+
+.main-home-section-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  .main-home-section {
+    background: url("../../../assets/imgs/homebg.jpg");
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .form-container {
+    position: relative;
+    z-index: 3;
+    @include fx-center(column);
+    align-items: flex-start;
+    margin: auto;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.75);
+    width: 33.33%;
+    @include media-breakpoint-between(sm, md) {
+      width: 50% !important;
+    }
+    @include media-breakpoint-only(xs) {
+      width: 90%;
+    }
+
+    .inner {
+      width: 80%;
+      margin: auto;
+      padding-bottom: 2em;
+
+      .title {
+        color: white;
+      }
+
+      .login-form {
+        .finalErrors {
+          color: yellow;
+          font-size: 1.2em;
+          text-align: center;
+        }
+
+        .input-label-container {
+          margin-top: 25px;
+          input {
+            background: $bg-inputs;
+            width: 100%;
+            color: white;
+            height: 50px;
+            @include nonBorder();
+            position: relative;
+            &.ng-touched {
+              &.ng-invalid {
+                transition-duration: 1s;
+                border-bottom: 4px solid yellow !important;
+              }
+            }
+          }
+          label {
+            color: rgba(255, 255, 255, 0.7);
+            &.labelAtTop {
+              top: -12px;
+            }
+          }
+        }
+        .error-label {
+          color: yellow !important;
+        }
+        .submit-btn {
+          width: 100%;
+          height: 50px;
+          background-color: $main;
+          margin-top: 50px;
+          font-size: 1.8em;
+          color: white !important;
+        }
+        .login-with-facebook {
+          margin-top: 15px;
+          padding: 0;
+          .fb-login {
+            color: white !important;
+          }
+          .fab.fa-facebook-square {
+            color: #3b5998;
+            font-size: 1.2em;
+          }
+          span {
+            margin-left: 10px;
+          }
+        }
+        .login-signup-now {
+          color: white !important;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

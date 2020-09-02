@@ -1,0 +1,19 @@
+@mixin nonBorder {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+@mixin border-rad($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin fx-center($dir: "row") {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $dir;
+}

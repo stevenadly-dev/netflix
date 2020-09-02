@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./../../scss/variables";
+@import "./../../scss/mixins";
+section {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.totalError,
+.success {
+  text-align: center;
+  width: 100%;
+  font-size: 1.3em;
+  border: 2px solid;
+  margin: 1em 0;
+  padding: 1em;
+}
+.totalError {
+  color: yellow;
+  border-color: yellow;
+}
+.success {
+  color: green;
+  border-color: green;
+}
+
+.input-label-container {
+  margin-top: 25px;
+  input,
+  textarea {
+    background: $bg-inputs;
+    width: 100%;
+    color: white;
+    height: 50px;
+    @include nonBorder();
+    position: relative;
+    &.ng-touched {
+      &.ng-invalid {
+        transition-duration: 1s;
+        border-bottom: 4px solid yellow !important;
+      }
+    }
+  }
+  textarea {
+    height: 300px;
+    width: 100% !important;
+  }
+  label {
+    color: rgba(255, 255, 255, 0.7);
+    &.labelAtTop {
+      top: -12px;
+    }
+  }
+}
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: $main;
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: white !important;
+}

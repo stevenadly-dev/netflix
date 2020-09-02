@@ -1,0 +1,66 @@
+<section class="movies-home">
+
+  <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+
+
+
+  <div class="popup-parent" (click)="closePopup()" *ngIf="popedup" @popupParent>
+
+    <ng-container *ngIf="currentMovie?.poster_path">
+      <img [src]="imgPrefix+currentMovie?.poster_path" @popupChild alt="">
+    </ng-container>
+    <ng-container *ngIf="!currentMovie?.poster_path">
+      <img src="../../../assets/imgs/placeholder.png" @popupChild alt="">
+    </ng-container>
+  </div>
+
+  <!-- <div class="container">
+    <div class="row">
+      <button class="btn btn-primary" (click)="isLogin = true">
+        login
+      </button>
+      <button class="btn btn-primary" (click)="isLogin = false">
+        logout
+      </button>
+
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="btn btn-danger" @fadeIn2 *ngIf="isLogin">test div</div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="movie-item" (click)="openPopup()">
+          <ng-container *ngIf="currentMovie?.poster_path">
+            <img [src]="imgPrefix+currentMovie?.poster_path" alt="">
+          </ng-container>
+          <ng-container *ngIf="!currentMovie?.poster_path">
+            <img src="../../../assets/imgs/placeholder.png" alt="">
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="movie-info">
+          <h3 class="movie-title">
+            {{currentMovie?.name || currentMovie?.title}}
+          </h3>
+
+
+          <h5 class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            {{currentMovie?.vote_average}}
+          </h5>
+
+          <h6 class="description">
+            {{currentMovie?.overview }}
+          </h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

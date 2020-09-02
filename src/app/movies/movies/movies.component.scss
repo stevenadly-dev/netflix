@@ -1,0 +1,23 @@
+.movies-home {
+  padding-top: 120px;
+}
+
+@keyframes overlayanimation {
+  0% {
+    top: 100%;
+    left: 0;
+  }
+  100% {
+    top: 0%;
+    left: 0;
+  }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.hero {
+  border: 2px solid white;
+}

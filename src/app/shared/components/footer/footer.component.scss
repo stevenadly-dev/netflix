@@ -1,0 +1,55 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./../../../../scss/variables";
+@import "./../../../../scss/mixins";
+
+.footer {
+  border-top: 10px solid $section-border;
+  padding: 2em 0;
+
+  .container {
+    .row {
+      .col-md-3 {
+        .footer-ul {
+          .footer-link {
+            list-style: none;
+            padding: 5px 0;
+            a {
+              color: $footerlink;
+              text-decoration: none;
+
+              &.active {
+                color: $main;
+              }
+            }
+          }
+        }
+
+        .social-media-container {
+          display: flex;
+
+          .sm-item {
+            list-style: none;
+            a {
+              width: 40px;
+              height: 40px;
+              margin: 5px;
+              background: $main;
+              border-radius: 50%;
+              color: white;
+              display: inline-flex;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+              text-decoration: none;
+
+              i {
+                margin: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
